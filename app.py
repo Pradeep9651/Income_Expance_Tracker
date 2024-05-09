@@ -29,3 +29,12 @@ with st.form("entry_form", clear_on_submit=True):
     col1,col2 = st.columns(2)
     col1.selectbox("Select Month:", months, key="months")
     col2.selectbox("Select year:", years, key="year")
+
+
+    "___"
+    with st.expander("Income"):
+        for income in income:
+            st.number_input(f"{income}", min_value=0, format="%i", step=10, key=income)
+    with st.expander("Expenses"):
+        for expenses in expenses:
+            st.number_input(f"{expense}", min_value=0, format="%i", step=10, key=income)
